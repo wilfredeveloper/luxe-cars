@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Shield, Award, CheckCircle } from 'lucide-react';
-import { cars } from '../data/cars';
-import CarCard from '../components/CarCard';
+import { Star, Shield, Award, CheckCircle } from 'lucide-react';
+import FeaturedSection from '../components/FeaturedSection';
 import heroBg from '../data/hero-bg.jpg';
 
 const Home: React.FC = () => {
-  const featuredCars = cars.filter(car => car.featured).slice(0, 3);
 
   return (
     <div className="min-h-screen">
@@ -219,35 +217,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Cars Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6">
-              Featured Collection
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our hand-selected vehicles that represent the pinnacle of automotive excellence.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredCars.map((car) => (
-              <CarCard key={car.id} car={car} />
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Link
-              to="/inventory"
-              className="inline-flex items-center space-x-2 bg-warm-blue-600 hover:bg-warm-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
-            >
-              <span>View Full Inventory</span>
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Full-Screen Car Showcase */}
+      <FeaturedSection />
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-900 text-white">
