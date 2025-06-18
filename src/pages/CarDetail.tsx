@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Phone, Heart, Share2, Calendar } from 'lucide-react';
 import { cars } from '../data/cars';
+import { formatPrice } from '../lib/utils';
 import InteractiveSpeedometer from '../components/ui/InteractiveSpeedometer';
 import InteractiveFuelEfficiency from '../components/ui/InteractiveFuelEfficiency';
 import PremiumSpecifications from '../components/ui/PremiumSpecifications';
@@ -112,7 +113,7 @@ const CarDetail: React.FC = () => {
               </p>
               <div className="flex items-center justify-between">
                 <div className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                  ${car.price.toLocaleString()}
+                  {formatPrice(car.price)}
                 </div>
                 <div className="text-right">
                   <p className="text-sm text-gray-500 mb-1">Starting Price</p>

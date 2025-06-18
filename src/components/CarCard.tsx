@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Car } from '../data/cars';
+import { formatPrice } from '../lib/utils';
 
 interface CarCardProps {
   car: Car;
@@ -31,7 +32,7 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
           
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-gray-900">
-              ${car.price.toLocaleString()}
+              {formatPrice(car.price)}
             </div>
             <div className="text-sm text-gray-500">
               {car.specs.horsepower} • {car.specs.acceleration}
